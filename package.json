@@ -13,7 +13,8 @@
     "url": "https://github.com/dpajin/vscode-language-slax.git"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages", 
+    "Snippets"
   ],
   "contributes": {
     "languages": [
