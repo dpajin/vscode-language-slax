@@ -2,7 +2,7 @@
   "name": "juniper-slax",
   "displayName": "Juniper SLAX",
   "description": "Syntax highlighting for SLAX",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.5.0"
   },
@@ -13,7 +13,7 @@
     "url": "https://github.com/dpajin/vscode-language-slax.git"
   },
   "categories": [
-    "Programming Languages", 
+    "Programming Languages",
     "Snippets"
   ],
   "contributes": {
