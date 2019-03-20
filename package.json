@@ -1,0 +1,26 @@
+{
+    "name": "juniper-slax",
+    "displayName": "Juniper SLAX",
+    "description": "Syntax highlighting for SLAX",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "icon": "images/space.png",
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "slax",
+            "aliases": ["SLAX", "slax"],
+            "extensions": [".slax"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "slax",
+            "scopeName": "source.slax",
+            "path": "./syntaxes/Slax.tmLanguage"
+        }]
+    }
+}
