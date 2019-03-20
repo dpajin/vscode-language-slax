@@ -1,31 +1,40 @@
 {
-    "name": "juniper-slax",
-    "displayName": "Juniper SLAX",
-    "description": "Syntax highlighting for SLAX",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.5.0"
-    },
-    "icon": "images/space.png",
-    "publisher": "dpajin",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/woodjamie/vscode-junos-syntax.git"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "juniper-slax",
+  "displayName": "Juniper SLAX",
+  "description": "Syntax highlighting for SLAX",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "icon": "images/space.png",
+  "publisher": "dpajin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/woodjamie/vscode-junos-syntax.git"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "slax",
+        "aliases": [
+          "SLAX",
+          "slax"
+        ],
+        "extensions": [
+          ".slax"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "slax",
-            "aliases": ["SLAX", "slax"],
-            "extensions": [".slax"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "slax",
-            "scopeName": "source.slax",
-            "path": "./syntaxes/Slax.tmLanguage"
-        }]
-    }
+    "grammars": [
+      {
+        "language": "slax",
+        "scopeName": "source.slax",
+        "path": "./syntaxes/Slax.tmLanguage"
+      }
+    ]
+  }
 }
