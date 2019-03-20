@@ -1,0 +1,86 @@
+{
+	"arg": {
+		"prefix": "arg",
+		"body": "\n<arguments> {\n  <name> ${1};\n  <description> ${2};\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"catch": {
+		"prefix": "catch",
+		"body": "\nif (\\$${1}/../xnm:error) {\n  call ${2:rpc_failure}(\\$${3:rpc} = \\$${1}, \\$${4:message} = \"${5:Error with ${1}}\");\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"commit-script": {
+		"prefix": "commit-script",
+		"body": "\nversion 1.0;   /* XML version not script version */\n\nns junos = \"http://xml.juniper.net/junos/*/junos\";\nns xnm = \"http://xml.juniper.net/xnm/1.1/xnm\";\nns jcs = \"http://xml.juniper.net/junos/commit-scripts/1.0\";\nns ext = \"http://xmlsoft.org/XSLT/namespace\";\n \nimport \"../import/junos.xsl\";\n\nmatch / {\n  <commit-script-results> {\n    ${4:/* your code goes here */}\n  }\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"eif": {
+		"prefix": "eif",
+		"body": "\nelse if (${1}) {\n  ${2:/* if this true */}\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"event-script": {
+		"prefix": "event-script",
+		"body": "\nversion 1.0;   /* XML version not script version */\n\nns junos = \"http://xml.juniper.net/junos/*/junos\";\nns xnm = \"http://xml.juniper.net/xnm/1.1/xnm\";\nns jcs = \"http://xml.juniper.net/junos/commit-scripts/1.0\";\nns ext = \"http://xmlsoft.org/XSLT/namespace\";\n \nimport \"../import/junos.xsl\";\n\n${1:\nvar \\$arguments = {\n  <argument> {\n    <name> ${2};\n    <description> ${3};\n  }\n}\n}\n\nmatch / {\n  <event-script-results> {\n    ${4:/* your code goes here */}\n  }\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"execute": {
+		"prefix": "execute",
+		"body": "\njcs:execute(${1}, ${2});\n",
+		"description": "",
+		"scope": ""
+	},
+	"for-each": {
+		"prefix": "for-each",
+		"body": "\nfor-each (${1}) {\n  ${2:/* add code here */}\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"if": {
+		"prefix": "if",
+		"body": "\nif (${1}) {\n  ${2:/* if true */}\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"ife": {
+		"prefix": "ife",
+		"body": "\nif (${1}) {\n  ${2:/* if true */}\n}\nelse {\n  ${3:/* if false */}\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"ifeif": {
+		"prefix": "ifeif",
+		"body": "\nif (${1}) {\n  ${2:/* if this true */}\n}\nelse if (${3}) {\n  ${4:/* or if this true */}\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"op-script": {
+		"prefix": "op-script",
+		"body": "\nversion 1.0;   /* XML version not script version */\n\nns junos = \"http://xml.juniper.net/junos/*/junos\";\nns xnm = \"http://xml.juniper.net/xnm/1.1/xnm\";\nns jcs = \"http://xml.juniper.net/junos/commit-scripts/1.0\";\nns ext = \"http://xmlsoft.org/XSLT/namespace\";\n \nimport \"../import/junos.xsl\";\n\n${1:\nvar \\$arguments = {\n  <argument> {\n    <name> ${2};\n    <description> ${3};\n  }\n}\n}\n\nmatch / {\n  <op-script-results> {\n    ${4:/* your code goes here */}\n  }\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"syslog": {
+		"prefix": "syslog",
+		"body": "\nexpr jcs:syslog(\"${1:facility.priority}\", \"${2:message}\");\n",
+		"description": "",
+		"scope": ""
+	},
+	"template": {
+		"prefix": "template",
+		"body": "\ntemplate ${1:name_me}(${2}) {\n  ${3:/* function code */}\n}\n",
+		"description": "",
+		"scope": ""
+	},
+	"terminate": {
+		"prefix": "terminate",
+		"body": "\n<xsl:message terminate=\"yes\"> ${1};\n",
+		"description": "",
+		"scope": ""
+	}
+}

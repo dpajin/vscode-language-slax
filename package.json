@@ -35,6 +35,12 @@
         "scopeName": "source.slax",
         "path": "./syntaxes/Slax.tmLanguage"
       }
+    ],
+    "snippets": [
+      {
+        "language": "slax",
+        "path": "./snippets/snippets.json"
+      }
     ]
   }
 }
