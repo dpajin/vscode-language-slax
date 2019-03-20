@@ -10,7 +10,7 @@
   "publisher": "dpajin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/woodjamie/vscode-junos-syntax.git"
+    "url": "git+https://github.com/dpajin/vscode-language-slax.git"
   },
   "categories": [
     "Programming Languages"
