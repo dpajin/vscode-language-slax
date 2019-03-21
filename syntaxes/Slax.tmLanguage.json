@@ -19,7 +19,7 @@
       }
     }, 
     { "name": "keyword.other.slax",
-      "match": "\\b(apply-templates|comment|copy-of|expr|for-each|if|else|import|include|match|mode|ns|param|preserve-space|priority|strip-space|var|mvar|set|version|with)\\b"
+      "match": "\\b(apply-templates|comment|else|append|include|ns|mvar|set|apply-imports|apply-templates|attribute|attribute-set|call|copy-node|copy-of|decimal-format|element|else|else if|expr|fallback|for|for-each|function|if|import|key|match|message|mode|mvar|number|output-method|param|preserve-space|priority|processing-instruction|result|set|sort|strip-space|template|terminate|trace|uexpr|use-attribute-sets|var|version|while|with)\\b"
     },
     { "name": "meta.template.slax",
       "match": "^\\s*(template|call|function)\\s+([-a-zA-Z0-9_:]+)\\s*\\((.*)\\)",
@@ -65,10 +65,13 @@
       }
     },
     { "name": "meta.other.function.other.slax",
-      "match": "\\b(boolean|ceiling|concat|contains|count|current|document|dyn:evaluate|dyn:map|element-available|exsl:node-set|exsl:object-type|floor|format-number|function-available|generate-id|id|key|lang|last|libxslt:node-set|local-name|name|namespace-uri|normalize-space|not|number|position|round|saxon:eval|saxon:evaluate|saxon:expression|saxon:line-number|saxon:node-set|set:difference|set:distinct|set:has-same-node|set:intersection|set:leading|set:trailing|starts-with|string|string-length|substring|substring-after|substring-before|sum|system-property|translate|unparsed-entity-uri|xf:escape-uri|xt:node-set)\\s?\\(",
+      "match": "\\b(os:exit-code|os:mkdir|os:stat|xutil:max-call-depth|xutil:json-to-xml|xutil:xml-to-json|boolean|ceiling|concat|contains|count|current|document|dyn:evaluate|dyn:map|element-available|exsl:node-set|exsl:object-type|floor|format-number|function-available|generate-id|id|key|lang|last|libxslt:node-set|local-name|name|namespace-uri|normalize-space|not|number|position|round|saxon:eval|saxon:evaluate|saxon:expression|saxon:line-number|saxon:node-set|set:difference|set:distinct|set:has-same-node|set:intersection|set:leading|set:trailing|starts-with|string|string-length|substring|substring-after|substring-before|sum|system-property|translate|unparsed-entity-uri|xf:escape-uri|xt:node-set)\\s?\\(",
       "captures": {
         "1": { "name": "support.function.slax" }
       }
+    },
+    {  "name": "support.function.slax",
+       "match": "\\b(curl:[^\\(]+)"
     },
     {  "name": "variable.other.slax",
        "match": "(\\$[-a-zA-Z0-9]+)(\\/[^;){\\ ]+)",

@@ -13,3 +13,6 @@ All notable changes to the "juniper-slax" extension will be documented in this f
 
 ## [0.0.9]
 - extend matching keywords with SLAX 1.0 statements, functions, elements, templates and default parameters
+
+## [0.1.0]
+- extend matching keywords with SLAX 1.1
