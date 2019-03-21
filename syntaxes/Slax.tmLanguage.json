@@ -1,0 +1,122 @@
+{ "name": "SLAX",
+  "scopeName": "source.slax",
+  "fileTypes": ["slax"],
+  "patterns": [
+    { "name": "comment.block.slax",
+      "begin": "/\\*", 
+      "end": "\\*/", 
+      "captures": {
+        "0": { "name": "comment.block.slax" }
+      }
+    }, 
+    { "name": "constant.namespace.slax",
+      "match": "(\\/[-a-zA-Z0-9_]+|[-a-zA-Z0-9_]+\\/[-a-zA-Z0-9_]+|\\/[-a-zA-Z0-9_]+\\/[-a-zA-Z0-9_]+)"  
+    }, 
+    { "name": "meta.other.constant.slax",
+      "match": "\\s+(\\$hostname|\\$localtime|\\$localtime-iso|\\$junos-context|\\$product|\\$script|\\$user|\\$arguments|\\$event-definition)(\\s+|\\/)",
+      "captures": {
+        "1": { "name": "constant.other.slax" }
+      }
+    }, 
+    { "name": "keyword.other.slax",
+      "match": "\\b(apply-templates|comment|copy-of|expr|for-each|if|else|import|include|match|mode|ns|param|preserve-space|priority|strip-space|var|mvar|set|version|with)\\b"
+    },
+    { "name": "meta.template.slax",
+      "match": "^\\s*(template|call|function)\\s+([-a-zA-Z0-9_:]+)\\s*\\((.*)\\)",
+      "captures": {
+        "1": { "name": "keyword.other.slax" },
+        "2": { "name": "entity.name.function.slax" },
+        "3": { "name": "variable.parameter.slax" }
+      }
+    },
+    { "name": "meta.method.slax",
+      "match": "^([-a-zA-Z0-9_]+)\\s*(\\([\\$;]*\\))?"
+    }, 
+    { "name": "support.class.slax",
+      "begin": "(<)(exsl:document|func:function|func:result|libxslt:debug|redirect:write|saxon:output|xsl:apply-imports|xsl:attribute|xsl:attribute-set|xsl:copy|xsl:decimal-format|xsl:document|xsl:element|xsl:fallback|xsl:key|xsl:message|xsl:namespace-alias|xsl:number|xsl:output|xsl:processing-instruction|xsl:sort|xsl:text|xsl:value-of|xt:document)",
+      "end": "(>)"    
+    }, 
+    { "name": "meta.tag.slax",
+      "begin": "(<)([a-zA-Z0-9:]+)",
+      "end": "(>)"    
+    }, 
+    { "name": "meta.other.function.math.slax",
+      "match": "\\b(math:(abs|acos|asin|atan|atan2|constant|cos|exp|highest|log|lowest|max|min|power|random|sin|sqrt|tan))\\s?\\(",
+      "captures": {
+        "1": { "name": "support.function.slax" }
+      }
+    },
+    { "name": "meta.other.function.jcs.slax",
+      "match": "\\b(jcs:(break-lines|close|dampen|empty|execute|first-of|get-input|get-secret|hostname|invoke|open|output|parse-ip|printf|progress|regex|sleep|split|sysctl|syslog|trace|edit-path|emit-change|emit-comment|grep|load-configuration|statement))\\s?\\(",
+      "captures": {
+        "1": { "name": "support.function.slax" }
+      }
+    },
+    { "name": "meta.other.function.date.slax",
+      "match": "\\b(date:(add|add-duration|date|date-time|day-abbreviation|day-in-month|day-in-week|day-in-year|day-name|day-of-week-in-month|difference|duration|hour-in-day|leap-year|minute-in-hour|month-abbreviation|month-in-year|month-name|second-in-minute|seconds|sum|time|week-in-month|week-in-year|year))\\s?\\(",
+      "captures": {
+        "1": { "name": "support.function.slax" }
+      }
+    },
+    { "name": "meta.other.function.str.slax",
+      "match": "\\b(str:(align|concat|decode-uri|encode-uri|padding|replace|split|tokenize))\\s?\\(",
+      "captures": {
+        "1": { "name": "support.function.slax" }
+      }
+    },
+    { "name": "meta.other.function.other.slax",
+      "match": "\\b(boolean|ceiling|concat|contains|count|current|document|dyn:evaluate|dyn:map|element-available|exsl:node-set|exsl:object-type|floor|format-number|function-available|generate-id|id|key|lang|last|libxslt:node-set|local-name|name|namespace-uri|normalize-space|not|number|position|round|saxon:eval|saxon:evaluate|saxon:expression|saxon:line-number|saxon:node-set|set:difference|set:distinct|set:has-same-node|set:intersection|set:leading|set:trailing|starts-with|string|string-length|substring|substring-after|substring-before|sum|system-property|translate|unparsed-entity-uri|xf:escape-uri|xt:node-set)\\s?\\(",
+      "captures": {
+        "1": { "name": "support.function.slax" }
+      }
+    },
+    {  "name": "variable.other.slax",
+       "match": "(\\$[-a-zA-Z0-9]+)(\\/[^;){\\ ]+)",
+       "captures": {
+           "1": { "name": "variable.other.slax" },
+           "2": { "name": "markup.underline.link.slax" }
+       }
+    },
+    { "name": "variable.language.slax",
+      "begin": "^\\s*var\\s+\\$arguments\\s*\\=\\s*\\{",
+      "end": "^\\s*\\}"
+    },
+    { "name": "variable.other.slax",
+      "match": "(\\$[-a-zA-Z0-9_]+)"
+    },
+    { "name": "constant.language.slax",
+      "match": "((true|false)\\(\\))"
+    },
+    { "name": "string.quoted.double.slax",
+      "begin": "\"", 
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.slax" }
+      }, 
+      "end": "\"", 
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.slax" }
+      },
+      "patterns": [
+        { "name": "constant.character.escape.slax",
+          "match": "\\\\."
+        }
+      ]
+    }, 
+    { "name": "string.quoted.single.slax",
+      "begin": "'",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.slax" }
+      },
+      "end": "'",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.slax" }
+      },
+      "patterns": [
+        { "name": "constant.character.escape.slax",
+          "match": "\\\\."
+        }
+      ]
+    } 
+  ], 
+  "uuid": "AAD4AAB9-384A-4DB4-A301-22E1D3747328"
+}
