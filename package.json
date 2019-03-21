@@ -34,7 +34,7 @@
       {
         "language": "slax",
         "scopeName": "source.slax",
-        "path": "./syntaxes/Slax.tmLanguage"
+        "path": "./syntaxes/Slax.tmLanguage.json"
       }
     ],
     "snippets": [
